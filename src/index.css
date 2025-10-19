@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Fira Code', monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+  }
+
+  .animate-typing {
+    overflow: hidden;
+    border-right: 2px solid;
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: currentColor }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+    }
+    to {
+      box-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+    }
+  }
+}
