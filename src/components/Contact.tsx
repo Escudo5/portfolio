@@ -56,7 +56,7 @@ export default function Contact() {
               </a>
 
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/smarquez-"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-4 p-4 bg-white dark:bg-[#0d1410] rounded-lg border border-gray-200 dark:border-gray-800 hover:border-[#00b4d8] dark:hover:border-[#00b4d8] transition-all duration-300 hover:shadow-lg hover:shadow-[#00b4d8]/10"
@@ -66,12 +66,12 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="text-sm text-gray-500 dark:text-gray-400">LinkedIn</div>
-                  <div className="font-medium text-gray-900 dark:text-white">linkedin.com/in/sergiomarquez</div>
+                  <div className="font-medium text-gray-900 dark:text-white">linkedin.com/in/smarquez-</div>
                 </div>
               </a>
 
               <a
-                href="https://github.com"
+                href="https://github.com/Escudo5"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-4 p-4 bg-white dark:bg-[#0d1410] rounded-lg border border-gray-200 dark:border-gray-800 hover:border-[#00ff99] dark:hover:border-[#00ff99] transition-all duration-300 hover:shadow-lg hover:shadow-[#00ff99]/10"
@@ -81,7 +81,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="text-sm text-gray-500 dark:text-gray-400">GitHub</div>
-                  <div className="font-medium text-gray-900 dark:text-white">github.com/sergiomarquez</div>
+                  <div className="font-medium text-gray-900 dark:text-white">github.com/Escudo5</div>
                 </div>
               </a>
             </div>

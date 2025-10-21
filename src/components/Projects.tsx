@@ -5,15 +5,15 @@ const projects = [
     title: 'Minishell',
     description: 'Implementación de una shell funcional en C que replica el comportamiento de bash, incluyendo pipes, redirecciones, gestión de señales y manejo de variables de entorno.',
     tags: ['C', 'Sistema', 'Procesos'],
-    github: '#',
-    demo: '#',
+    github: 'https://github.com/Escudo5/minishell',
+    demo: 'https://github.com/Escudo5/minishell',
   },
   {
     title: 'Cub3D',
     description: 'Motor de renderizado 3D inspirado en Wolfenstein 3D usando raycasting. Proyecto que explora gráficos, matemáticas y optimización del rendimiento en C.',
     tags: ['C', 'Gráficos', 'Raycasting'],
-    github: '#',
-    demo: '#',
+    github: 'https://github.com/Escudo5/cub3d',
+    demo: 'https://github.com/Escudo5/cub3d',
   },
 ];
 
@@ -37,6 +37,8 @@ export default function Projects() {
               <div className="absolute top-4 right-4 flex gap-2">
                 <a
                   href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="p-2 bg-gray-200 dark:bg-gray-800 rounded-lg hover:bg-[#00ff99] dark:hover:bg-[#00ff99] hover:text-gray-900 transition-colors duration-300"
                   aria-label="View on GitHub"
                 >
@@ -44,6 +46,8 @@ export default function Projects() {
                 </a>
                 <a
                   href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="p-2 bg-gray-200 dark:bg-gray-800 rounded-lg hover:bg-[#00b4d8] dark:hover:bg-[#00b4d8] hover:text-white transition-colors duration-300"
                   aria-label="View demo"
                 >

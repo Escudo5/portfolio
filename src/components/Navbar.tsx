@@ -29,10 +29,10 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between md:justify-center md:gap-12">
           <button
             onClick={() => scrollToSection('hero')}
-            className="text-xl font-bold text-gray-900 dark:text-white hover:text-[#00ff99] dark:hover:text-[#00ff99] transition-colors duration-300"
+            className="md:absolute md:left-4 text-xl font-bold text-gray-900 dark:text-white hover:text-[#00ff99] dark:hover:text-[#00ff99] transition-colors duration-300"
           >
             &lt;SM /&gt;
           </button>
