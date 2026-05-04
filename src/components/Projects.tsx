@@ -2,6 +2,20 @@ import { Folder, ExternalLink, Github } from 'lucide-react';
 
 const projects = [
   {
+    title: 'Inception',
+    description: 'Proyecto de administración de sistemas y contenerización con Docker. Despliegue de una infraestructura web completa (Nginx, WordPress, MariaDB) en contenedores separados usando Docker Compose.',
+    tags: ['Docker', 'Linux', 'DevOps', 'Nginx'],
+    github: 'https://github.com/Escudo5/inception',
+    demo: 'https://github.com/Escudo5/inception',
+  },
+  {
+    title: 'ft_irc',
+    description: 'Desarrollo de un servidor IRC (Internet Relay Chat) en C++ 98 desde cero. Manejo de múltiples clientes mediante I/O multiplexing (sockets, select/poll/epoll) y comandos del protocolo.',
+    tags: ['C++', 'Redes', 'Sockets', 'Protocolos'],
+    github: 'https://github.com/Escudo5/ft_irc',
+    demo: 'https://github.com/Escudo5/ft_irc',
+  },
+  {
     title: 'Minishell',
     description: 'Implementación de una shell funcional en C que replica el comportamiento de bash, incluyendo pipes, redirecciones, gestión de señales y manejo de variables de entorno.',
     tags: ['C', 'Sistema', 'Procesos'],
@@ -19,11 +33,11 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 px-4 bg-white dark:bg-[#0d1410] transition-colors duration-300">
+    <section id="projects" className="py-20 px-4 bg-white/70 dark:bg-slate-950/40 transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center gap-3 mb-12">
-          <Folder className="w-8 h-8 text-[#00ff99]" />
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+          <Folder className="w-8 h-8 text-brand-primary" />
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
             Proyectos
           </h2>
         </div>
@@ -32,14 +46,14 @@ export default function Projects() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative p-6 bg-gray-50 dark:bg-[#0a0f0d] rounded-xl border border-gray-200 dark:border-gray-800 hover:border-[#00ff99] dark:hover:border-[#00ff99] transition-all duration-300 hover:shadow-xl hover:shadow-[#00ff99]/10 hover:-translate-y-2"
+              className="group relative p-6 glass-panel rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col h-full"
             >
               <div className="absolute top-4 right-4 flex gap-2">
                 <a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-gray-200 dark:bg-gray-800 rounded-lg hover:bg-[#00ff99] dark:hover:bg-[#00ff99] hover:text-gray-900 transition-colors duration-300"
+                  className="p-2 bg-slate-200/80 dark:bg-white/10 rounded-xl hover:bg-brand-primary hover:text-white dark:text-slate-300 transition-colors duration-300"
                   aria-label="View on GitHub"
                 >
                   <Github className="w-5 h-5" />
@@ -48,26 +62,26 @@ export default function Projects() {
                   href={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-gray-200 dark:bg-gray-800 rounded-lg hover:bg-[#00b4d8] dark:hover:bg-[#00b4d8] hover:text-white transition-colors duration-300"
+                  className="p-2 bg-slate-200/80 dark:bg-white/10 rounded-xl hover:bg-brand-secondary hover:text-white dark:text-slate-300 transition-colors duration-300"
                   aria-label="View demo"
                 >
                   <ExternalLink className="w-5 h-5" />
                 </a>
               </div>
 
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 pr-20">
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 pr-20">
                 {project.title}
               </h3>
 
-              <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+              <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed flex-grow">
                 {project.description}
               </p>
 
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 mt-auto">
                 {project.tags.map((tag, tagIndex) => (
                   <span
                     key={tagIndex}
-                    className="px-3 py-1 text-xs font-medium bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-[#00ff99] rounded-full border border-gray-300 dark:border-gray-700 group-hover:border-[#00ff99] transition-colors duration-300"
+                    className="px-3 py-1 text-xs font-medium bg-brand-primary/10 text-brand-primary dark:text-brand-secondary rounded-full border border-brand-primary/20 group-hover:border-brand-primary/50 transition-colors duration-300"
                   >
                     {tag}
                   </span>

@@ -5,9 +5,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        neon: {
-          green: '#00ff99',
-          blue: '#00b4d8',
+        brand: {
+          primary: '#4f46e5',
+          secondary: '#0ea5e9',
+          accent: '#8b5cf6',
+          surface: '#eef2ff',
+          darkSurface: '#0f172a',
         },
       },
     },

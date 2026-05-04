@@ -1,0 +1,57 @@
+# Rediseño del Portfolio: Enfoque Emprendedor y Nuevos Proyectos
+
+El objetivo de este plan es actualizar el portfolio para incluir los proyectos más recientes de 42 Madrid (`inception` y `ft_irc`) y pivotar el diseño de un perfil centrado en "hacker/ciberseguridad" hacia una estética y mensaje más **emprendedor, profesional y moderno (startup-like)**.
+
+## User Review Required
+
+> [!IMPORTANT]
+> Revisa si los enlaces a GitHub para los nuevos proyectos (`inception` y `ft_irc`) y las descripciones se ajustan a lo que tenías en mente. Si quieres usar enlaces específicos, por favor proporciónalos, si no, generaré la estructura de enlaces hacia `https://github.com/Escudo5/inception` y `https://github.com/Escudo5/ft_irc`.
+> También he propuesto cambiar la fuente principal de 'Fira Code' (muy de programador) a 'Inter' u 'Outfit' (más de diseño de producto web/emprendedor), y los colores neon a algo más refinado. ¿Te parece bien este cambio radical de estilo visual?
+
+## Proposed Changes
+
+### Archivos de Configuración y Raíz
+Modificaciones en el archivo HTML base para cambiar la fuente y las etiquetas meta relacionadas al SEO.
+
+#### [MODIFY] index.html
+- Cambiar la fuente de Google Fonts de `Fira Code` a `Inter`.
+- Actualizar el `<title>` para quitar "entusiasta de la ciberseguridad" por "Desarrollador de Software y Emprendedor".
+- Actualizar los `<meta name="description">` y `keywords` para reflejar el enfoque emprendedor.
+
+#### [MODIFY] tailwind.config.js
+- Ajustar la paleta de colores para incluir tonos más modernos como índigo, azul profesional o violeta en lugar del verde/azul neón muy brillante, logrando un estilo más limpio (glassmorphism/premium).
+
+#### [MODIFY] src/index.css
+- Cambiar la regla global de la fuente para utilizar `Inter` o `Outfit`.
+- Añadir utilidades para animaciones más sutiles (micro-animaciones) en lugar de tanto resplandor neón.
+
+---
+
+### Componentes de la Interfaz (UI)
+Rediseño de los componentes para reflejar la nueva identidad.
+
+#### [MODIFY] src/components/Hero.tsx
+- Eliminar los elementos de código de fondo (como `int main()`, `malloc()`) que daban aspecto puramente de bajo nivel.
+- Remover la caja estilo terminal (`sergio@dev:~$`).
+- Cambiar los textos: De "Programador en C y C++ / Apasionado por la ciberseguridad" a algo como "Desarrollador de Software enfocado en soluciones escalables" o "Creando productos tecnológicos de alto impacto".
+- Implementar un diseño de fondo con gradientes suaves y formas abstractas (modern web design).
+
+#### [MODIFY] src/components/About.tsx
+- Reestructurar el texto de presentación para destacar la capacidad de adaptación, la visión de producto y la resolución de problemas (enfoque emprendedor).
+- Quitar el enfoque principal en ciberseguridad y sustituirlo por el desarrollo de arquitecturas robustas y proyectos de valor.
+
+#### [MODIFY] src/components/Skills.tsx
+- Reemplazar la habilidad "Ciberseguridad básica" por "Arquitectura y Sistemas" o "DevOps / Infraestructura" (justificado por el nuevo proyecto Docker Inception).
+- Darle un rediseño más premium a las tarjetas de las habilidades, con efectos hover suaves.
+
+#### [MODIFY] src/components/Projects.tsx
+- Añadir **Inception**: Proyecto de Docker y administración de sistemas en 42 Madrid.
+- Añadir **ft_irc**: Proyecto de redes, sockets y protocolo IRC en C/C++ de 42 Madrid.
+- Refinar el diseño de las tarjetas de los proyectos para que se vean más como productos (mejorando la presentación de los tags y los enlaces).
+
+## Verification Plan
+
+### Manual Verification
+- Comprobar que los nuevos proyectos aparecen en la sección de proyectos con sus links y tags correctos.
+- Navegar por la aplicación para confirmar que el tema de "ciberseguridad" se ha difuminado a favor de un tono emprendedor y profesional.
+- Verificar que la fuente tipográfica y los colores han cambiado dando esa sensación más "wow", de startup tecnológica premium.

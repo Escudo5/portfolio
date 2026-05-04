@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 * {
-  font-family: 'Fira Code', monospace;
+  font-family: 'Inter', sans-serif;
 }
 
 html {
@@ -12,32 +12,22 @@ html {
 
 body {
   overflow-x: hidden;
+  background:
+    radial-gradient(circle at top, rgba(79, 70, 229, 0.08), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.08), transparent 26%),
+    #f8fafc;
+}
+
+html.dark body {
+  background:
+    radial-gradient(circle at top, rgba(79, 70, 229, 0.16), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.12), transparent 24%),
+    #020617;
 }
 
 @layer utilities {
-  .text-glow {
-    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
-  }
-
-  .animate-typing {
-    overflow: hidden;
-    border-right: 2px solid;
-    white-space: nowrap;
-    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-  }
-
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
-
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: currentColor }
-  }
-
   .animate-float {
-    animation: float 3s ease-in-out infinite;
+    animation: float 6s ease-in-out infinite;
   }
 
   @keyframes float {
@@ -45,16 +35,27 @@ body {
     50% { transform: translateY(-10px); }
   }
 
-  .animate-glow {
-    animation: glow 2s ease-in-out infinite alternate;
+  .animate-soft-pulse {
+    animation: softPulse 5s ease-in-out infinite;
   }
 
-  @keyframes glow {
-    from {
-      box-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+  @keyframes softPulse {
+    0%, 100% {
+      opacity: 0.8;
+      transform: scale(1);
     }
-    to {
-      box-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+
+    50% {
+      opacity: 1;
+      transform: scale(1.03);
     }
+  }
+
+  .glass-panel {
+    @apply border border-white/60 bg-white/70 backdrop-blur-xl shadow-[0_20px_60px_rgba(15,23,42,0.08)];
+  }
+
+  html.dark .glass-panel {
+    @apply border-white/10 bg-slate-950/60 shadow-[0_20px_60px_rgba(2,6,23,0.45)];
   }
 }

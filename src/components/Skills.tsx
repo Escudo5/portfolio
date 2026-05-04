@@ -1,4 +1,4 @@
-import { Code2, Shield, Globe, Lightbulb, Database, Cpu } from 'lucide-react';
+import { Code2, Server, Globe, Lightbulb, Database, Cpu } from 'lucide-react';
 
 const skills = [
   {
@@ -7,9 +7,9 @@ const skills = [
     description: 'Desarrollo de aplicaciones de bajo nivel, gestión de memoria y optimización de rendimiento.'
   },
   {
-    name: 'Ciberseguridad básica',
-    icon: Shield,
-    description: 'Análisis de vulnerabilidades, prácticas de código seguro y fundamentos de protección de sistemas.'
+    name: 'Infraestructura y DevOps',
+    icon: Server,
+    description: 'Despliegue de arquitecturas escalables, contenerización con Docker y administración de sistemas Linux.'
   },
   {
     name: 'Inglés nivel B2',
@@ -19,7 +19,7 @@ const skills = [
   {
     name: 'Aprendizaje autónomo',
     icon: Lightbulb,
-    description: 'Capacidad para investigar, aprender nuevas tecnologías y resolver problemas de forma independiente.'
+    description: 'Capacidad para investigar, aprender nuevas tecnologías y resolver problemas complejos de forma independiente.'
   },
   {
     name: 'Estructuras de datos',
@@ -27,19 +27,19 @@ const skills = [
     description: 'Diseño e implementación de estructuras eficientes para la gestión óptima de información.'
   },
   {
-    name: 'Lógica de programación',
+    name: 'Arquitectura de Software',
     icon: Cpu,
-    description: 'Resolución de problemas complejos mediante algoritmos eficientes y pensamiento computacional.'
+    description: 'Diseño de sistemas robustos, redes (sockets) y desarrollo de protocolos a medida.'
   },
 ];
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 px-4 bg-gray-50 dark:bg-[#0a0f0d] transition-colors duration-300">
+    <section id="skills" className="py-20 px-4 bg-slate-50/80 dark:bg-slate-950/20 transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center gap-3 mb-12">
-          <Code2 className="w-8 h-8 text-[#00ff99]" />
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+          <Code2 className="w-8 h-8 text-brand-primary" />
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
             Habilidades
           </h2>
         </div>
@@ -50,16 +50,16 @@ export default function Skills() {
             return (
               <div
                 key={index}
-                className="group relative p-6 bg-white dark:bg-[#0d1410] rounded-xl border border-gray-200 dark:border-gray-800 hover:border-[#00ff99] dark:hover:border-[#00ff99] transition-all duration-300 hover:shadow-xl hover:shadow-[#00ff99]/10"
+                className="group relative p-6 glass-panel rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="p-3 bg-gray-100 dark:bg-gray-800 rounded-lg group-hover:scale-110 transition-transform duration-300">
-                    <Icon className="w-6 h-6 text-[#00ff99]" />
+                  <div className="p-3 bg-white/80 dark:bg-white/5 rounded-xl group-hover:scale-105 transition-transform duration-300">
+                    <Icon className="w-6 h-6 text-brand-primary" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 dark:text-white">{skill.name}</h3>
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white">{skill.name}</h3>
                 </div>
 
-                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                   {skill.description}
                 </p>
               </div>

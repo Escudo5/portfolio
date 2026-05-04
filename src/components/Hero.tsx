@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import { ChevronDown, Terminal } from 'lucide-react';
+import { ChevronDown, Sparkles } from 'lucide-react';
 
 export default function Hero() {
   const [displayText, setDisplayText] = useState('');
-  const fullText = 'Sergio Márquez_';
+  const fullText = 'Sergio Márquez';
 
   useEffect(() => {
     let index = 0;
@@ -25,66 +25,50 @@ export default function Hero() {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50 dark:from-[#0a0f0d] dark:via-[#0d1410] dark:to-[#0a0f0d]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-indigo-50 to-sky-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950" />
 
       <div className="absolute inset-0">
-        <div className="absolute inset-0 opacity-5 dark:opacity-10" style={{
-          backgroundImage: `radial-gradient(circle at 2px 2px, #00ff99 1px, transparent 1px)`,
-          backgroundSize: '50px 50px',
+        <div className="absolute inset-0 opacity-40 dark:opacity-30" style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(79,70,229,0.35) 1px, transparent 1px)`,
+          backgroundSize: '38px 38px',
         }} />
       </div>
 
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#00ff99]/5 dark:bg-[#00ff99]/10 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#00b4d8]/5 dark:bg-[#00b4d8]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-
-      <div className="absolute inset-0 opacity-10 dark:opacity-20">
-        {[...Array(25)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute text-xs text-[#00ff99] font-mono"
-            style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              animation: `float ${3 + Math.random() * 4}s ease-in-out infinite`,
-              animationDelay: `${Math.random() * 2}s`,
-            }}
-          >
-            {['int main()', 'void*', 'malloc()', 'free()', '0x00', 'NULL', '//', 'struct', 'return 0;', '#include'][Math.floor(Math.random() * 10)]}
-          </div>
-        ))}
-      </div>
+      <div className="absolute top-24 left-1/5 w-80 h-80 bg-brand-primary/15 dark:bg-brand-primary/25 rounded-full blur-3xl animate-soft-pulse" />
+      <div className="absolute bottom-24 right-1/5 w-96 h-96 bg-brand-secondary/15 dark:bg-brand-secondary/20 rounded-full blur-3xl animate-soft-pulse" style={{ animationDelay: '1.5s' }} />
+      <div className="absolute top-1/3 right-[12%] w-56 h-56 bg-violet-500/10 rounded-full blur-3xl animate-float" />
 
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 bg-gray-200/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-full border border-gray-300 dark:border-gray-700">
-          <Terminal className="w-4 h-4 text-[#00ff99]" />
-          <span className="text-sm text-gray-700 dark:text-gray-300 font-mono">sergio@dev:~$</span>
+        <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 glass-panel rounded-full">
+          <Sparkles className="w-4 h-4 text-brand-primary" />
+          <span className="text-sm text-slate-700 dark:text-slate-300 font-medium">Construyendo productos con impacto</span>
         </div>
 
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-900 dark:text-white">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 text-slate-900 dark:text-white tracking-tight">
           <span className="inline-block min-h-[1.2em]">
             {displayText}
-            <span className="animate-pulse">|</span>
+            <span className="animate-pulse text-brand-primary">|</span>
           </span>
         </h1>
 
-        <p className="text-lg md:text-xl lg:text-2xl text-gray-700 dark:text-[#00ff99] mb-4 font-light">
-          Programador en C y C++
+        <p className="text-lg md:text-xl lg:text-2xl text-slate-700 dark:text-sky-300 mb-4 font-medium">
+          Desarrollador de Software con mentalidad de producto
         </p>
-        <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
-          En formación constante | Apasionado por la ciberseguridad
+        <p className="text-base md:text-lg text-slate-600 dark:text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+          Creo soluciones escalables, interfaces cuidadas y sistemas sólidos para llevar ideas técnicas a productos útiles y sostenibles. Me mueven la arquitectura, la ejecución y el aprendizaje continuo.
         </p>
 
         <button
           onClick={scrollToProjects}
-          className="group relative px-8 py-4 bg-[#00ff99] dark:bg-[#00ff99] text-gray-900 dark:text-[#0a0f0d] font-bold rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-[#00ff99]/50 hover:scale-105"
+          className="group relative px-8 py-4 bg-brand-primary text-white font-bold rounded-full overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-brand-primary/30 hover:scale-[1.03]"
         >
           <span className="relative z-10">Ver proyectos</span>
-          <div className="absolute inset-0 bg-[#00b4d8] transform translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+          <div className="absolute inset-0 bg-brand-secondary transform translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
         </button>
       </div>
 
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ChevronDown className="w-8 h-8 text-gray-400 dark:text-gray-600" />
+        <ChevronDown className="w-8 h-8 text-slate-400 dark:text-slate-500" />
       </div>
     </section>
   );

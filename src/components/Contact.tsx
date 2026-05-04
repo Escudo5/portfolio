@@ -26,32 +26,32 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 bg-gray-50 dark:bg-[#0a0f0d] transition-colors duration-300">
+    <section id="contact" className="py-20 px-4 bg-slate-50/80 dark:bg-slate-950/20 transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center gap-3 mb-12">
-          <Mail className="w-8 h-8 text-[#00ff99]" />
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+          <Mail className="w-8 h-8 text-brand-primary" />
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
             Contacto
           </h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
           <div className="space-y-6">
-            <p className="text-lg text-gray-700 dark:text-gray-300">
-              Estoy disponible para colaboraciones, proyectos freelance o simplemente para conversar sobre tecnología y ciberseguridad.
+            <p className="text-lg text-slate-700 dark:text-slate-300">
+              Estoy abierto a colaboraciones, oportunidades freelance o conversaciones sobre producto, tecnología e ideas con potencial real de ejecución.
             </p>
 
             <div className="space-y-4">
               <a
-                href="mailto:sergiomargar03@gmail.com"
-                className="group flex items-center gap-4 p-4 bg-white dark:bg-[#0d1410] rounded-lg border border-gray-200 dark:border-gray-800 hover:border-[#00ff99] dark:hover:border-[#00ff99] transition-all duration-300 hover:shadow-lg hover:shadow-[#00ff99]/10"
+                href="mailto:sergio03.dev@gmail.com"
+                className="group flex items-center gap-4 p-4 glass-panel rounded-2xl transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="p-3 bg-gray-100 dark:bg-gray-800 rounded-lg group-hover:scale-110 transition-transform duration-300">
-                  <Mail className="w-6 h-6 text-[#00ff99]" />
+                <div className="p-3 bg-white/80 dark:bg-white/10 rounded-xl group-hover:scale-105 transition-transform duration-300">
+                  <Mail className="w-6 h-6 text-brand-primary" />
                 </div>
                 <div>
-                  <div className="text-sm text-gray-500 dark:text-gray-400">Email</div>
-                  <div className="font-medium text-gray-900 dark:text-white">sergiomargar03@gmail.com</div>
+                  <div className="text-sm text-slate-500 dark:text-slate-400">Email</div>
+                  <div className="font-medium text-slate-900 dark:text-white">sergio03.dev@gmail.com</div>
                 </div>
               </a>
 
@@ -59,14 +59,14 @@ export default function Contact() {
                 href="https://www.linkedin.com/in/smarquez-"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-4 p-4 bg-white dark:bg-[#0d1410] rounded-lg border border-gray-200 dark:border-gray-800 hover:border-[#00b4d8] dark:hover:border-[#00b4d8] transition-all duration-300 hover:shadow-lg hover:shadow-[#00b4d8]/10"
+                className="group flex items-center gap-4 p-4 glass-panel rounded-2xl transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="p-3 bg-gray-100 dark:bg-gray-800 rounded-lg group-hover:scale-110 transition-transform duration-300">
-                  <Linkedin className="w-6 h-6 text-[#00b4d8]" />
+                <div className="p-3 bg-white/80 dark:bg-white/10 rounded-xl group-hover:scale-105 transition-transform duration-300">
+                  <Linkedin className="w-6 h-6 text-brand-secondary" />
                 </div>
                 <div>
-                  <div className="text-sm text-gray-500 dark:text-gray-400">LinkedIn</div>
-                  <div className="font-medium text-gray-900 dark:text-white">linkedin.com/in/smarquez-</div>
+                  <div className="text-sm text-slate-500 dark:text-slate-400">LinkedIn</div>
+                  <div className="font-medium text-slate-900 dark:text-white">linkedin.com/in/smarquez-</div>
                 </div>
               </a>
 
@@ -74,14 +74,14 @@ export default function Contact() {
                 href="https://github.com/Escudo5"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-4 p-4 bg-white dark:bg-[#0d1410] rounded-lg border border-gray-200 dark:border-gray-800 hover:border-[#00ff99] dark:hover:border-[#00ff99] transition-all duration-300 hover:shadow-lg hover:shadow-[#00ff99]/10"
+                className="group flex items-center gap-4 p-4 glass-panel rounded-2xl transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="p-3 bg-gray-100 dark:bg-gray-800 rounded-lg group-hover:scale-110 transition-transform duration-300">
-                  <Github className="w-6 h-6 text-[#00ff99]" />
+                <div className="p-3 bg-white/80 dark:bg-white/10 rounded-xl group-hover:scale-105 transition-transform duration-300">
+                  <Github className="w-6 h-6 text-brand-primary" />
                 </div>
                 <div>
-                  <div className="text-sm text-gray-500 dark:text-gray-400">GitHub</div>
-                  <div className="font-medium text-gray-900 dark:text-white">github.com/Escudo5</div>
+                  <div className="text-sm text-slate-500 dark:text-slate-400">GitHub</div>
+                  <div className="font-medium text-slate-900 dark:text-white">github.com/Escudo5</div>
                 </div>
               </a>
             </div>
@@ -89,7 +89,7 @@ export default function Contact() {
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                 Nombre
               </label>
               <input
@@ -99,12 +99,12 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-white dark:bg-[#0d1410] border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:border-[#00ff99] dark:focus:border-[#00ff99] transition-colors duration-300 text-gray-900 dark:text-white"
+                className="w-full px-4 py-3 glass-panel rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-primary/30 transition-colors duration-300 text-slate-900 dark:text-white"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                 Email
               </label>
               <input
@@ -114,12 +114,12 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-white dark:bg-[#0d1410] border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:border-[#00ff99] dark:focus:border-[#00ff99] transition-colors duration-300 text-gray-900 dark:text-white"
+                className="w-full px-4 py-3 glass-panel rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-primary/30 transition-colors duration-300 text-slate-900 dark:text-white"
               />
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                 Mensaje
               </label>
               <textarea
@@ -129,14 +129,14 @@ export default function Contact() {
                 onChange={handleChange}
                 required
                 rows={5}
-                className="w-full px-4 py-3 bg-white dark:bg-[#0d1410] border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:border-[#00ff99] dark:focus:border-[#00ff99] transition-colors duration-300 resize-none text-gray-900 dark:text-white"
+                className="w-full px-4 py-3 glass-panel rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-primary/30 transition-colors duration-300 resize-none text-slate-900 dark:text-white"
               />
             </div>
 
             <button
               type="submit"
               disabled={isSubmitting || isSubmitted}
-              className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-[#00ff99] text-gray-900 font-bold rounded-lg hover:bg-[#00b4d8] hover:text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-xl hover:shadow-[#00ff99]/30"
+              className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-brand-primary text-white font-bold rounded-full hover:bg-brand-secondary transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-xl hover:shadow-brand-primary/20"
             >
               {isSubmitted ? (
                 <>
