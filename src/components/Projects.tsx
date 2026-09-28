@@ -1,18 +1,24 @@
-import { Folder, ExternalLink, Github } from 'lucide-react';
+import { Box, ExternalLink, Folder, Github, MonitorSmartphone, Network, Terminal } from 'lucide-react';
+import mzThumbnail from '../assets/mz-fisioterapia.png';
 
 const projects = [
   {
     title: 'MZ Fisioterapia Leganés',
     description: 'Web para una clínica de fisioterapia y rehabilitación en Leganés. Una experiencia clara y cercana para presentar sus especialidades y facilitar la reserva de cita.',
     tags: ['React', 'UX/UI', 'Responsive'],
+    learning: 'Diseño de producto, responsive design y comunicación clara de servicios.',
     github: undefined,
     demo: 'https://fisioterapia-mz.vercel.app/',
     featured: true,
+    image: mzThumbnail,
   },
   {
     title: 'Inception',
     description: 'Proyecto de administración de sistemas y contenerización con Docker. Despliegue de una infraestructura web completa (Nginx, WordPress, MariaDB) en contenedores separados usando Docker Compose.',
     tags: ['Docker', 'Linux', 'DevOps', 'Nginx'],
+    learning: 'Orquestación de servicios, redes internas y despliegues reproducibles.',
+    icon: Box,
+    visualLabel: 'Infraestructura en contenedores',
     github: 'https://github.com/Escudo5/inception',
     demo: 'https://github.com/Escudo5/inception',
   },
@@ -20,6 +26,9 @@ const projects = [
     title: 'ft_irc',
     description: 'Desarrollo de un servidor IRC (Internet Relay Chat) en C++ 98 desde cero. Manejo de múltiples clientes mediante I/O multiplexing (sockets, select/poll/epoll) y comandos del protocolo.',
     tags: ['C++', 'Redes', 'Sockets', 'Protocolos'],
+    learning: 'Programación de red, concurrencia y diseño de un protocolo de comunicación.',
+    icon: Network,
+    visualLabel: 'Comunicación cliente-servidor',
     github: 'https://github.com/Escudo5/ft_irc',
     demo: 'https://github.com/Escudo5/ft_irc',
   },
@@ -27,6 +36,9 @@ const projects = [
     title: 'Minishell',
     description: 'Implementación de una shell funcional en C que replica el comportamiento de bash, incluyendo pipes, redirecciones, gestión de señales y manejo de variables de entorno.',
     tags: ['C', 'Sistema', 'Procesos'],
+    learning: 'Procesos, señales, pipes y parsing para construir una shell desde cero.',
+    icon: Terminal,
+    visualLabel: 'Herramientas de sistema',
     github: 'https://github.com/Escudo5/minishell',
     demo: 'https://github.com/Escudo5/minishell',
   },
@@ -34,6 +46,9 @@ const projects = [
     title: 'Cub3D',
     description: 'Motor de renderizado 3D inspirado en Wolfenstein 3D usando raycasting. Proyecto que explora gráficos, matemáticas y optimización del rendimiento en C.',
     tags: ['C', 'Gráficos', 'Raycasting'],
+    learning: 'Matemáticas aplicadas, renderizado en tiempo real y optimización en C.',
+    icon: MonitorSmartphone,
+    visualLabel: 'Motor gráfico en tiempo real',
     github: 'https://github.com/Escudo5/cub3d',
     demo: 'https://github.com/Escudo5/cub3d',
   },
@@ -54,11 +69,33 @@ export default function Projects() {
         </div>
 
         <div className="grid sm:grid-cols-2 gap-5">
-          {projects.map((project, index) => (
-            <div
+          {projects.map((project, index) => {
+            const ProjectIcon = project.icon;
+
+            return (
+            <article
               key={project.title}
-              className={`group relative p-6 glass-panel rounded-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col h-full ${project.featured ? 'sm:col-span-2 !bg-slate-900 !text-white !border-slate-800' : ''}`}
+              className={`group overflow-hidden glass-panel rounded-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col h-full ${project.featured ? 'sm:col-span-2 !bg-slate-900 !text-white !border-slate-800' : ''}`}
             >
+              <div className={`relative aspect-[16/7] overflow-hidden ${project.featured ? 'bg-slate-800' : 'bg-slate-100'}`}>
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt="Vista previa de la web de MZ Fisioterapia Leganés"
+                    width="1870"
+                    height="1015"
+                    loading="eager"
+                    className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                ) : ProjectIcon ? (
+                  <div className="flex h-full flex-col items-center justify-center gap-3 text-slate-500">
+                    <ProjectIcon className="h-10 w-10 text-brand-primary" strokeWidth={1.5} />
+                    <span className="text-sm font-medium">{project.visualLabel}</span>
+                  </div>
+                ) : null}
+              </div>
+
+              <div className="relative flex flex-1 flex-col p-6">
               <div className="absolute top-4 right-4 flex gap-2">
                 {project.github && (
                   <a
@@ -94,6 +131,10 @@ export default function Projects() {
                 {project.description}
               </p>
 
+              <p className={`mb-5 text-sm leading-relaxed ${project.featured ? 'text-slate-300' : 'text-slate-500'}`}>
+                <span className="font-semibold">Aprendizaje clave:</span> {project.learning}
+              </p>
+
               <div className="flex flex-wrap gap-2 mt-auto">
                 {project.tags.map((tag, tagIndex) => (
                   <span
@@ -104,8 +145,10 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
-            </div>
-          ))}
+              </div>
+            </article>
+            );
+          })}
         </div>
       </div>
     </section>

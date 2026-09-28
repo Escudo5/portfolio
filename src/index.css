@@ -18,23 +18,26 @@ html {
 
 body {
   overflow-x: hidden;
-  background: #f7f8fa;
+  background: #f8fafc;
 }
 
 .site-container {
-  width: min(calc(100% - 2rem), 72rem);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 72rem;
+  padding-inline: 1rem;
   margin-inline: auto;
 }
 
 @media (min-width: 640px) {
   .site-container {
-    width: min(calc(100% - 3rem), 72rem);
+    padding-inline: 1.5rem;
   }
 }
 
 @media (min-width: 1024px) {
   .site-container {
-    width: min(calc(100% - 5rem), 72rem);
+    padding-inline: 2.5rem;
   }
 }
 
