@@ -21,6 +21,23 @@ body {
   background: #f7f8fa;
 }
 
+.site-container {
+  width: min(calc(100% - 2rem), 72rem);
+  margin-inline: auto;
+}
+
+@media (min-width: 640px) {
+  .site-container {
+    width: min(calc(100% - 3rem), 72rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-container {
+    width: min(calc(100% - 5rem), 72rem);
+  }
+}
+
 html.dark body {
   background: #0b1120;
 }
@@ -32,6 +49,17 @@ html.dark body {
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 @layer utilities {

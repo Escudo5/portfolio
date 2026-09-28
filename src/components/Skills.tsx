@@ -35,8 +35,8 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 px-4 bg-slate-50/80 dark:bg-slate-950/20 transition-colors duration-300">
-      <div className="max-w-6xl mx-auto">
+    <section id="skills" className="py-20 bg-slate-50/80 dark:bg-slate-950/20 transition-colors duration-300">
+      <div className="site-container">
         <div className="flex items-center gap-3 mb-12">
           <Code2 className="w-8 h-8 text-brand-primary" />
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">

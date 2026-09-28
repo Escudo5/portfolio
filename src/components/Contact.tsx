@@ -1,33 +1,9 @@
-import { useState } from 'react';
-import { Mail, Linkedin, Github, Send, CheckCircle } from 'lucide-react';
+import { Mail, Linkedin, Github, ArrowUpRight } from 'lucide-react';
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: '', email: '', message: '' });
-    }, 3000);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
   return (
-    <section id="contact" className="py-20 px-4 bg-slate-50/80 dark:bg-slate-950/20 transition-colors duration-300">
-      <div className="max-w-6xl mx-auto">
+    <section id="contact" className="py-20 bg-slate-50/80 dark:bg-slate-950/20 transition-colors duration-300">
+      <div className="site-container">
         <div className="flex items-center gap-3 mb-12">
           <Mail className="w-8 h-8 text-brand-primary" />
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
@@ -35,34 +11,38 @@ export default function Contact() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-10 items-start">
           <div className="space-y-6">
             <p className="text-lg text-slate-700 dark:text-slate-300">
-              Estoy abierto a colaboraciones, oportunidades freelance o conversaciones sobre producto, tecnología e ideas con potencial real de ejecución.
+              Estoy abierto a colaboraciones, oportunidades freelance y conversaciones sobre producto y tecnología.
             </p>
 
-            <div className="space-y-4">
-              <a
-                href="mailto:sergio03.dev@gmail.com"
-                className="group flex items-center gap-4 p-4 glass-panel rounded-2xl transition-all duration-300 hover:-translate-y-1"
-              >
-                <div className="p-3 bg-white/80 dark:bg-white/10 rounded-xl group-hover:scale-105 transition-transform duration-300">
+            <a
+              href="mailto:sergio03.dev@gmail.com"
+              className="group flex items-center justify-between gap-4 p-5 glass-panel rounded-lg transition-transform duration-200 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary"
+            >
+              <div className="flex items-center gap-4 min-w-0">
+                <div className="p-3 bg-brand-primary/10 rounded-lg shrink-0">
                   <Mail className="w-6 h-6 text-brand-primary" />
                 </div>
-                <div>
-                  <div className="text-sm text-slate-500 dark:text-slate-400">Email</div>
-                  <div className="font-medium text-slate-900 dark:text-white">sergio03.dev@gmail.com</div>
+                <div className="min-w-0">
+                  <div className="text-sm text-slate-500 dark:text-slate-400">Escríbeme</div>
+                  <div className="font-medium text-slate-900 dark:text-white break-all">sergio03.dev@gmail.com</div>
                 </div>
-              </a>
+              </div>
+              <ArrowUpRight className="w-5 h-5 text-slate-400 group-hover:text-brand-primary shrink-0 transition-colors" />
+            </a>
+          </div>
 
+          <div className="space-y-3">
               <a
                 href="https://www.linkedin.com/in/smarquez-"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-4 p-4 glass-panel rounded-2xl transition-all duration-300 hover:-translate-y-1"
+                className="group flex items-center gap-4 p-4 glass-panel rounded-lg transition-transform duration-200 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary"
               >
-                <div className="p-3 bg-white/80 dark:bg-white/10 rounded-xl group-hover:scale-105 transition-transform duration-300">
-                  <Linkedin className="w-6 h-6 text-brand-secondary" />
+                <div className="p-3 bg-brand-secondary/10 rounded-lg">
+                  <Linkedin className="w-5 h-5 text-brand-secondary" />
                 </div>
                 <div>
                   <div className="text-sm text-slate-500 dark:text-slate-400">LinkedIn</div>
@@ -74,88 +54,17 @@ export default function Contact() {
                 href="https://github.com/Escudo5"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-4 p-4 glass-panel rounded-2xl transition-all duration-300 hover:-translate-y-1"
+                className="group flex items-center gap-4 p-4 glass-panel rounded-lg transition-transform duration-200 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary"
               >
-                <div className="p-3 bg-white/80 dark:bg-white/10 rounded-xl group-hover:scale-105 transition-transform duration-300">
-                  <Github className="w-6 h-6 text-brand-primary" />
+                <div className="p-3 bg-brand-primary/10 rounded-lg">
+                  <Github className="w-5 h-5 text-brand-primary" />
                 </div>
                 <div>
                   <div className="text-sm text-slate-500 dark:text-slate-400">GitHub</div>
                   <div className="font-medium text-slate-900 dark:text-white">github.com/Escudo5</div>
                 </div>
               </a>
-            </div>
           </div>
-
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                Nombre
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 glass-panel rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-primary/30 transition-colors duration-300 text-slate-900 dark:text-white"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-3 glass-panel rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-primary/30 transition-colors duration-300 text-slate-900 dark:text-white"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
-                Mensaje
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={5}
-                className="w-full px-4 py-3 glass-panel rounded-2xl focus:outline-none focus:ring-2 focus:ring-brand-primary/30 transition-colors duration-300 resize-none text-slate-900 dark:text-white"
-              />
-            </div>
-
-            <button
-              type="submit"
-              disabled={isSubmitting || isSubmitted}
-              className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-brand-primary text-white font-bold rounded-full hover:bg-brand-secondary transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-xl hover:shadow-brand-primary/20"
-            >
-              {isSubmitted ? (
-                <>
-                  <CheckCircle className="w-5 h-5" />
-                  Mensaje enviado
-                </>
-              ) : isSubmitting ? (
-                <>
-                  <div className="w-5 h-5 border-2 border-gray-900 border-t-transparent rounded-full animate-spin" />
-                  Enviando...
-                </>
-              ) : (
-                <>
-                  <Send className="w-5 h-5" />
-                  Enviar mensaje
-                </>
-              )}
-            </button>
-          </form>
         </div>
       </div>
     </section>

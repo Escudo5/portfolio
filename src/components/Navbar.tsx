@@ -28,7 +28,7 @@ export default function Navbar() {
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-4 py-4">
+      <div className="site-container py-4">
         <div className="flex items-center justify-between md:justify-center md:gap-12">
           <button
             onClick={() => scrollToSection('hero')}

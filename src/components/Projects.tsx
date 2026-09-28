@@ -41,8 +41,8 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 px-4 bg-white/70 dark:bg-slate-950/40 transition-colors duration-300">
-      <div className="max-w-6xl mx-auto">
+    <section id="projects" className="py-20 bg-white/70 dark:bg-slate-950/40 transition-colors duration-300">
+      <div className="site-container">
         <div className="flex items-center gap-3 mb-12">
           <Folder className="w-8 h-8 text-brand-primary" />
           <div>
@@ -57,7 +57,7 @@ export default function Projects() {
           {projects.map((project, index) => (
             <div
               key={project.title}
-              className={`group relative p-6 glass-panel rounded-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col h-full ${project.featured ? 'sm:col-span-2 bg-slate-900 text-white dark:bg-white dark:text-slate-950' : ''}`}
+              className={`group relative p-6 glass-panel rounded-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col h-full ${project.featured ? 'sm:col-span-2 !bg-slate-900 !text-white !border-slate-800' : ''}`}
             >
               <div className="absolute top-4 right-4 flex gap-2">
                 {project.github && (
@@ -82,15 +82,15 @@ export default function Projects() {
                 </a>
               </div>
 
-              <span className={`mb-8 text-xs font-semibold uppercase tracking-[0.18em] ${project.featured ? 'text-sky-300' : 'text-brand-primary'}`}>
+              <span className={`mb-8 text-xs font-semibold uppercase tracking-[0.18em] ${project.featured ? 'text-sky-200' : 'text-brand-primary'}`}>
                 {project.featured ? 'Proyecto destacado' : `0${index}`}
               </span>
 
-              <h3 className={`text-xl font-bold mb-3 pr-20 ${project.featured ? 'text-white dark:text-slate-950' : 'text-slate-900 dark:text-white'}`}>
+              <h3 className={`text-xl font-bold mb-3 pr-20 ${project.featured ? 'text-white' : 'text-slate-900 dark:text-white'}`}>
                 {project.title}
               </h3>
 
-              <p className={`mb-6 leading-relaxed flex-grow ${project.featured ? 'text-slate-300 dark:text-slate-600 max-w-2xl' : 'text-slate-600 dark:text-slate-400'}`}>
+              <p className={`mb-6 leading-relaxed flex-grow ${project.featured ? 'text-slate-200 max-w-2xl' : 'text-slate-600 dark:text-slate-400'}`}>
                 {project.description}
               </p>
 
@@ -98,7 +98,7 @@ export default function Projects() {
                 {project.tags.map((tag, tagIndex) => (
                   <span
                     key={tagIndex}
-                    className={`px-3 py-1 text-xs font-medium rounded-full border transition-colors duration-300 ${project.featured ? 'bg-white/10 text-sky-200 border-white/15 group-hover:border-sky-300/60 dark:bg-slate-950/10 dark:text-slate-700 dark:border-slate-950/15' : 'bg-brand-primary/10 text-brand-primary dark:text-brand-secondary border-brand-primary/20 group-hover:border-brand-primary/50'}`}
+                    className={`px-3 py-1 text-xs font-medium rounded-full border transition-colors duration-300 ${project.featured ? 'bg-white/10 text-sky-100 border-white/20 group-hover:border-sky-300/60' : 'bg-brand-primary/10 text-brand-primary dark:text-brand-secondary border-brand-primary/20 group-hover:border-brand-primary/50'}`}
                   >
                     {tag}
                   </span>

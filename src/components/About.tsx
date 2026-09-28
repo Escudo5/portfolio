@@ -2,8 +2,8 @@ import { User, Code2, Rocket } from 'lucide-react';
 
 export default function About() {
   return (
-    <section id="about" className="py-20 px-4 bg-white/70 dark:bg-slate-950/40 transition-colors duration-300">
-      <div className="max-w-6xl mx-auto">
+    <section id="about" className="py-20 bg-white/70 dark:bg-slate-950/40 transition-colors duration-300">
+      <div className="site-container">
         <div className="flex items-center gap-3 mb-12">
           <User className="w-8 h-8 text-brand-primary" />
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
