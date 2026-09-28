@@ -25,7 +25,7 @@ export default function Hero() {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-indigo-50 to-sky-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950" />
+      <div className="absolute inset-0 bg-slate-50 dark:bg-slate-950" />
 
       <div className="absolute inset-0">
         <div className="absolute inset-0 opacity-40 dark:opacity-30" style={{
@@ -34,12 +34,8 @@ export default function Hero() {
         }} />
       </div>
 
-      <div className="absolute top-24 left-1/5 w-80 h-80 bg-brand-primary/15 dark:bg-brand-primary/25 rounded-full blur-3xl animate-soft-pulse" />
-      <div className="absolute bottom-24 right-1/5 w-96 h-96 bg-brand-secondary/15 dark:bg-brand-secondary/20 rounded-full blur-3xl animate-soft-pulse" style={{ animationDelay: '1.5s' }} />
-      <div className="absolute top-1/3 right-[12%] w-56 h-56 bg-violet-500/10 rounded-full blur-3xl animate-float" />
-
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 glass-panel rounded-full">
+        <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 border border-slate-200 dark:border-white/10 rounded-full">
           <Sparkles className="w-4 h-4 text-brand-primary" />
           <span className="text-sm text-slate-700 dark:text-slate-300 font-medium">Construyendo productos con impacto</span>
         </div>

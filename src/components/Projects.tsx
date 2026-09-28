@@ -2,6 +2,14 @@ import { Folder, ExternalLink, Github } from 'lucide-react';
 
 const projects = [
   {
+    title: 'MZ Fisioterapia Leganés',
+    description: 'Web para una clínica de fisioterapia y rehabilitación en Leganés. Una experiencia clara y cercana para presentar sus especialidades y facilitar la reserva de cita.',
+    tags: ['React', 'UX/UI', 'Responsive'],
+    github: undefined,
+    demo: 'https://fisioterapia-mz.vercel.app/',
+    featured: true,
+  },
+  {
     title: 'Inception',
     description: 'Proyecto de administración de sistemas y contenerización con Docker. Despliegue de una infraestructura web completa (Nginx, WordPress, MariaDB) en contenedores separados usando Docker Compose.',
     tags: ['Docker', 'Linux', 'DevOps', 'Nginx'],
@@ -37,43 +45,52 @@ export default function Projects() {
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center gap-3 mb-12">
           <Folder className="w-8 h-8 text-brand-primary" />
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
+          <div>
+            <p className="section-kicker">Trabajo seleccionado</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
             Proyectos
-          </h2>
+            </h2>
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-5">
           {projects.map((project, index) => (
             <div
-              key={index}
-              className="group relative p-6 glass-panel rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col h-full"
+              key={project.title}
+              className={`group relative p-6 glass-panel rounded-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col h-full ${project.featured ? 'sm:col-span-2 bg-slate-900 text-white dark:bg-white dark:text-slate-950' : ''}`}
             >
               <div className="absolute top-4 right-4 flex gap-2">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 bg-slate-200/80 dark:bg-white/10 rounded-xl hover:bg-brand-primary hover:text-white dark:text-slate-300 transition-colors duration-300"
-                  aria-label="View on GitHub"
-                >
-                  <Github className="w-5 h-5" />
-                </a>
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 bg-slate-200/80 dark:bg-white/10 rounded-lg hover:bg-brand-primary hover:text-white dark:text-slate-300 transition-colors duration-300"
+                    aria-label={`Ver ${project.title} en GitHub`}
+                  >
+                    <Github className="w-5 h-5" />
+                  </a>
+                )}
                 <a
                   href={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 bg-slate-200/80 dark:bg-white/10 rounded-xl hover:bg-brand-secondary hover:text-white dark:text-slate-300 transition-colors duration-300"
-                  aria-label="View demo"
+                  className="p-2 bg-slate-200/80 dark:bg-white/10 rounded-lg hover:bg-brand-secondary hover:text-white dark:text-slate-300 transition-colors duration-300"
+                  aria-label={`Visitar ${project.title}`}
                 >
                   <ExternalLink className="w-5 h-5" />
                 </a>
               </div>
 
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 pr-20">
+              <span className={`mb-8 text-xs font-semibold uppercase tracking-[0.18em] ${project.featured ? 'text-sky-300' : 'text-brand-primary'}`}>
+                {project.featured ? 'Proyecto destacado' : `0${index}`}
+              </span>
+
+              <h3 className={`text-xl font-bold mb-3 pr-20 ${project.featured ? 'text-white dark:text-slate-950' : 'text-slate-900 dark:text-white'}`}>
                 {project.title}
               </h3>
 
-              <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed flex-grow">
+              <p className={`mb-6 leading-relaxed flex-grow ${project.featured ? 'text-slate-300 dark:text-slate-600 max-w-2xl' : 'text-slate-600 dark:text-slate-400'}`}>
                 {project.description}
               </p>
 
@@ -81,7 +98,7 @@ export default function Projects() {
                 {project.tags.map((tag, tagIndex) => (
                   <span
                     key={tagIndex}
-                    className="px-3 py-1 text-xs font-medium bg-brand-primary/10 text-brand-primary dark:text-brand-secondary rounded-full border border-brand-primary/20 group-hover:border-brand-primary/50 transition-colors duration-300"
+                    className={`px-3 py-1 text-xs font-medium rounded-full border transition-colors duration-300 ${project.featured ? 'bg-white/10 text-sky-200 border-white/15 group-hover:border-sky-300/60 dark:bg-slate-950/10 dark:text-slate-700 dark:border-slate-950/15' : 'bg-brand-primary/10 text-brand-primary dark:text-brand-secondary border-brand-primary/20 group-hover:border-brand-primary/50'}`}
                   >
                     {tag}
                   </span>
