@@ -41,10 +41,6 @@ body {
   }
 }
 
-html.dark body {
-  background: #0b1120;
-}
-
 .section-kicker {
   margin-bottom: 0.5rem;
   color: #4f46e5;
@@ -95,7 +91,4 @@ html.dark body {
     @apply border border-slate-200/80 bg-white/80 shadow-[0_12px_30px_rgba(15,23,42,0.05)];
   }
 
-  html.dark .glass-panel {
-    @apply border-white/10 bg-slate-900/70 shadow-[0_12px_30px_rgba(2,6,23,0.25)];
-  }
 }
