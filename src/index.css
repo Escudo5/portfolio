@@ -16,6 +16,13 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
+body,
+#root {
+  margin: 0;
+  border: 0;
+}
+
 body {
   overflow-x: hidden;
   background: #f8fafc;

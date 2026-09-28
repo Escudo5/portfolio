@@ -24,7 +24,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/90 dark:bg-slate-950/90 backdrop-blur-md shadow-lg border-b border-slate-200/70 dark:border-white/10'
+          ? 'bg-white/95 backdrop-blur-md'
           : 'bg-transparent'
       }`}
     >
@@ -32,7 +32,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between md:justify-center md:gap-12">
           <button
             onClick={() => scrollToSection('hero')}
-            className="md:absolute md:left-4 text-xl font-bold text-slate-900 dark:text-white hover:text-brand-primary dark:hover:text-brand-primary transition-colors duration-300"
+            className="md:absolute md:left-6 text-xl font-bold text-slate-900 hover:text-brand-primary transition-colors duration-300"
           >
             &lt;SM /&gt;
           </button>
@@ -72,13 +72,13 @@ export default function Navbar() {
             <div className="flex flex-col gap-4">
               <button
                 onClick={() => scrollToSection('about')}
-                className="text-left px-4 py-2 text-slate-700 dark:text-slate-300 hover:text-brand-primary dark:hover:text-brand-primary transition-colors duration-300 font-medium"
+                className="text-left px-4 py-2 text-slate-700 hover:text-brand-primary transition-colors duration-300 font-medium"
               >
                 Sobre mí
               </button>
               <button
                 onClick={() => scrollToSection('projects')}
-                className="text-left px-4 py-2 text-slate-700 dark:text-slate-300 hover:text-brand-primary dark:hover:text-brand-primary transition-colors duration-300 font-medium"
+                className="text-left px-4 py-2 text-slate-700 hover:text-brand-primary transition-colors duration-300 font-medium"
               >
                 Proyectos
               </button>
